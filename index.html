@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>WebVR test</title>
+    <meta name="description" content="Alhambra">
+    <script src="https://aframe.io/releases/0.9.0/aframe.min.js"></script>
+    <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v5.1.0/dist/aframe-extras.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
+
+  </head>
+  <body>
+    <a-scene background="color: #ECECEC">
+        <a-entity environment="preset: default; groundTexture: none; ground: flat; shadow: true; lighting: none"></a-entity>
+<!--        <a-sky color="blue"></a-sky>-->
+      
+        <a-assets timeout="20000">
+        <a-asset-item id="model" src="./assets/glbfiles/alhambra_ceiling2.glb"></a-asset-item>
+        <a-asset-item id="model2" src="./assets/glbfiles/column_wall.glb"></a-asset-item>
+        <a-asset-item id="model3" src="./assets/glbfiles/Alhambra10.glb"></a-asset-item>
+        </a-assets>
+        <a-entity id="rig"
+          movement-controls
+          position="0 0 0">
+            <a-entity camera
+            position="0 1.6 0"
+            look-controls="pointerLockEnabled: true"></a-entity>
+        </a-entity>
+        <a-plane color="#b3a172" height="3.5" width="5.5" rotation="0 0 0" position="-0.45 1.65 -7" shader="flat"></a-plane>
+        <a-plane color="#b3a172" height="3.5" width="5.8" rotation="0 90 0" position="2.288 1.65 -9.902" shader="flat"></a-plane>
+        <a-plane color="#b3a172" height="3.5" width="5.8" rotation="0 -90 0" position="-3.194 1.65 -9.902" shader="flat"></a-plane>
+        <a-plane color="#b3a172" height="3.5" width="5.5" rotation="0 -180 0" position="-0.45 1.65 -12.8" shader="flat"></a-plane>
+        <a-text color="black" position="-0.45 1.65 -7" value="Walk in and look up!" align="center" scale="2 2"></a-text>
+        
+        <a-light type="ambient" color="#445451" castShadow="true"></a-light>
+        <a-light type="spot" intensity="2" position="-.25 -3.144 -10" angle="45" rotation="0 0 0" target="#up" light="castShadow: true" shadowCameraLeft="-10" shadowCameraBottom="-10" shadowCameraRight="10" shadowCameraTop="10">
+            <a-entity id="up" position="0 1 0"></a-entity>
+        </a-light>
+          <a-light type="hemisphere" intensity="1" position="0 0 0" target="#up" light="castShadow: true" shadowCameraLeft="-10" shadowCameraBottom="-10" shadowCameraRight="10" shadowCameraTop="10">
+            <a-entity id="up" position="0 1 0"></a-entity>
+        </a-light>
+        <a-light type="hemisphere" intensity=".572" position="0 50 0" light="castShadow: true"shadowCameraLeft="-10" shadowCameraBottom="-10" shadowCameraRight="10" shadowCameraTop="10"></a-light>
+        <a-light type="directional" intensity=".8" position="0 1 0" light="castShadow: true" shadowCameraLeft="-10" shadowCameraBottom="-10" shadowCameraRight="10" shadowCameraTop="10"></a-light>
+        <a-light type="point" intensity="5" position="7.802 4.123 -5.423" angle="45" light="castShadow: false" decay="2" distance="8" target="#up2">
+                  <a-entity id="up2" position="0 1 0"></a-entity>
+        </a-light>
+  
+        
+        <a-entity id="ceiling" gltf-model="#model" rotation="73 0 -20" position="0 -3 -8" shadow="cast: true; receive: true"></a-entity>
+        <a-entity id="wall" gltf-model="#model2" rotation="45 0 -4" position="-8.174 -0.002 -6.4" scale=".5 .5 .5" shadow="cast: true; receive: true"></a-entity>
+        <a-entity id="alcove" gltf-model="./assets/glbfiles/Alhambra10.glb" rotation="83.34129496413928 -99.16810813903801 -43.3986881921842" position="6.36473 1.78479 -5.70364" scale="0.25 0.25 0.25" shadow=""></a-entity>
+<!--        <a-light type="directional" intensity="1.8" position="-.25 3 6.39" target="#3dmodel"></a-light>-->
+    </a-scene>
+  </body>
+</html>
