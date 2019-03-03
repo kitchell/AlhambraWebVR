@@ -16,14 +16,15 @@
       
 <!--        Assets -->
         <a-assets timeout="2000000">
-        <a-asset-item id="model" src="./assets/glbfiles/alhambra_ceiling2.glb"></a-asset-item>
-        <a-asset-item id="model2" src="./assets/glbfiles/column_wall.glb"></a-asset-item>
-        <a-asset-item id="model3" src="./assets/glbfiles/Alhambra10.glb"></a-asset-item>
-        <a-asset-item id="model4" src="./assets/glbfiles/alhambra_wall.glb"></a-asset-item>
-        <img id="tilefloor" src="./assets/TexturesCom_FloorsMarble0026_1_seamless_S.jpg">
-        <img id="tilewall" src="./assets/TexturesCom_TilesZellige0115_3_seamless_S.png">
-        <img id="ceilingfloor" src="./assets/TexturesCom_FloorsRegular0200_1_seamless_S.jpg">
-        <img id="alcovewall" src="./assets/tile-3.png">
+            <a-asset-item id="model" src="./assets/glbfiles/alhambra_ceiling2.glb"></a-asset-item>
+            <a-asset-item id="model2" src="./assets/glbfiles/column_wall.glb"></a-asset-item>
+            <a-asset-item id="model3" src="./assets/glbfiles/Alhambra10.glb"></a-asset-item>
+            <a-asset-item id="model4" src="./assets/glbfiles/alhambra_wall.glb"></a-asset-item>
+            <img id="tilefloor" src="./assets/TexturesCom_FloorsMarble0026_1_seamless_S.jpg">
+            <img id="tilewall" src="./assets/TexturesCom_TilesZellige0115_3_seamless_S.png">
+            <img id="ceilingfloor" src="./assets/TexturesCom_FloorsRegular0200_1_seamless_S.jpg">
+            <img id="alcovewall" src="./assets/tile-3.png">
+            <audio id="bkgrnd" src="./assets/sounds/Ambient-synth-pad-sound.mp3" preload="auto"></audio>
         </a-assets>
         
 <!--        Camera -->
@@ -99,6 +100,10 @@
         <a-light id="walllight" type="point" intensity="1.5" position="-12 1.7 -2" angle="50" light="castShadow: false" decay="3" distance="6" target="#left">
                   <a-entity id="left" position="-10 1 0"></a-entity>
         </a-light>
+        
+        <!--        Sound -->
+        <a-entity sound="src: #bkgrnd; autoplay: true; position: 0 5 -1; loop: true"></a-entity>
+        
 <!--
           <a-light type="hemisphere" intensity=".3" position="0 0 0" target="#up" light="castShadow: true" shadowCameraLeft="-10" shadowCameraBottom="-10" shadowCameraRight="10" shadowCameraTop="10">
             <a-entity id="up" position="0 1 0"></a-entity>
