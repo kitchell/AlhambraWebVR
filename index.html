@@ -24,7 +24,7 @@
             <img id="tilewall" src="./assets/TexturesCom_TilesZellige0115_3_seamless_S.png">
             <img id="ceilingfloor" src="./assets/TexturesCom_FloorsRegular0200_1_seamless_S.jpg">
             <img id="alcovewall" src="./assets/tile-3.png">
-            <audio id="bkgrnd" src="./assets/sounds/Ambient-synth-pad-sound.mp3" preload="auto"></audio>
+<!--            <audio id="bkgrnd" src="./assets/sounds/Ambient-synth-pad-sound.mp3" preload="auto"></audio>-->
         </a-assets>
         
 <!--        Camera -->
@@ -34,6 +34,8 @@
             <a-entity camera
             position="0 1.6 0"
             look-controls="pointerLockEnabled: true"></a-entity>
+                    <!--        Sound -->
+<!--            <a-entity sound="src: #bkgrnd; autoplay: true; position: 0 5 -1; loop: true"></a-entity>-->
         </a-entity>
         
 <!--        Box around ceiling, planes -->
@@ -101,8 +103,7 @@
                   <a-entity id="left" position="-10 1 0"></a-entity>
         </a-light>
         
-        <!--        Sound -->
-        <a-entity sound="src: #bkgrnd; autoplay: true; position: 0 5 -1; loop: true"></a-entity>
+
         
 <!--
           <a-light type="hemisphere" intensity=".3" position="0 0 0" target="#up" light="castShadow: true" shadowCameraLeft="-10" shadowCameraBottom="-10" shadowCameraRight="10" shadowCameraTop="10">
